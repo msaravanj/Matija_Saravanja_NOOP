@@ -48,7 +48,7 @@ public class MainFrame extends JFrame {
         JMenuItem saveItem;
         JMenuItem disconnectItem;
 
-        MyMenuBar(){
+        public MyMenuBar() {
             fileMenu = new JMenu("File");
             serverMenu = new JMenu("Server");
             saveDataItem = new JMenuItem("Save data");
@@ -74,7 +74,5 @@ public class MainFrame extends JFrame {
             this.add(fileMenu);
             this.add(serverMenu);
         }
-
-
     }
 }

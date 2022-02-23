@@ -16,6 +16,9 @@ public class CalculatorPanel extends JPanel {
     private JButton calcButton;
     private JTextField resultField;
 
+    private JButton loadYrsRtgBtn;
+    private JButton loadOppRtgBtn;
+
 
     public CalculatorPanel(){
 
@@ -44,7 +47,7 @@ public class CalculatorPanel extends JPanel {
         add(new JLabel(""), gbc);
         gbc.anchor = GridBagConstraints.FIRST_LINE_END;
         gbc.gridy ++;
-        add(new JLabel("Your rating: "), gbc);
+        add(new JLabel("(Your) rating: "), gbc);
 
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
         gbc.gridx ++;
@@ -62,45 +65,54 @@ public class CalculatorPanel extends JPanel {
         add(oppRatingField, gbc);
 
         gbc.gridx++;
-
         gbc.gridy--;
-        add(new JLabel("Result: "),gbc);
-        gbc.gridx++;
-        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
-        gbc.weighty = 0.1;
-        add(wonRadio, gbc);
+        add(loadYrsRtgBtn, gbc);
         gbc.gridy++;
-        add(drawRadio, gbc);
-        gbc.gridy++;
-        add(lostRadio, gbc);
-        gbc.weighty = 0.25;
+        add(loadOppRtgBtn, gbc);
 
-        gbc.gridy--;
-        gbc.gridx--;
-        gbc.gridx--;
-        gbc.gridx--;
         gbc.gridy++;
+
+        gbc.gridx--;
+        gbc.gridx--;
         gbc.anchor = GridBagConstraints.FIRST_LINE_END;
-        add(new JLabel("Koef.: "), gbc);
+        add(new JLabel("K:  "),gbc);
         gbc.gridx++;
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(koefCombo, gbc);
-
         gbc.gridx--;
         gbc.gridy++;
         gbc.anchor = GridBagConstraints.FIRST_LINE_END;
-        add(calcButton, gbc);
 
-        gbc.gridy++;
-        gbc.gridy++;
-
-        gbc.anchor = GridBagConstraints.FIRST_LINE_END;
-        add(new JLabel("Rating changed: "),gbc);
+        add(new JLabel("Result: "), gbc);
         gbc.gridx++;
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
-        add(resultField, gbc);
+        add(wonRadio, gbc);
+        gbc.anchor = GridBagConstraints.FIRST_LINE_END;
+        //gbc.gridx++;
+        add(drawRadio, gbc);
+        gbc.gridx++;
+        add(lostRadio, gbc);
+
+
         gbc.gridy++;
-        add(new JLabel(""),gbc);
+        gbc.gridx--;
+
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+        add(calcButton, gbc);
+        gbc.gridy++;
+        gbc.gridx--;
+
+        gbc.anchor = GridBagConstraints.FIRST_LINE_END;
+        add(new JLabel("Rating changed for: "), gbc);
+        gbc.gridx++;
+        gbc.anchor = GridBagConstraints.FIRST_LINE_END;
+        add(resultField, gbc);
+
+
+
+
+
+
 
 
     }
@@ -129,6 +141,10 @@ public class CalculatorPanel extends JPanel {
         koefCombo.setSelectedItem(2);
         calcButton = new JButton("Calculate");
         resultField = new JTextField(15);
+        loadYrsRtgBtn = new JButton("DB");
+        loadOppRtgBtn = new JButton("DB");
+
+        resultField.setEnabled(false);
     }
 
 

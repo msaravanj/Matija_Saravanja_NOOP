@@ -1,10 +1,13 @@
 package view;
 
+import controller.Controller;
 import model.ChessTitleEnum;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class DataPanel extends JPanel {
 
@@ -19,6 +22,9 @@ public class DataPanel extends JPanel {
     private JTextField fideIdField;
     private JComboBox<ChessTitleEnum> titleCombo;
     private JButton submitButton;
+    private DataPanelListener listener;
+    private DataPanelEvent dpe;
+    private Controller controller;
 
 
     public DataPanel(){
@@ -29,9 +35,39 @@ public class DataPanel extends JPanel {
 
 
         createComp();
-//        activateComp();
+        activateComp();
         layoutComp();
         setBorders();
+    }
+
+    private void activateComp() {
+
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (nameField.getText().equals("") || surnameField.getText().equals("") || eloRatingField.getText().equals("") || fideIdField.getText().equals("") || birthYearField.getText().equals("") || countryField.getText().equals("")){
+                    JOptionPane.showMessageDialog(DataPanel.this, "Empty fields must be filled in!",
+                            "WARNING", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    String name = nameField.getText();
+                    String surname = surnameField.getText();
+                    String gender = bg.getSelection().getActionCommand();
+                    int birthYear = Integer.parseInt(birthYearField.getText());
+                    String country = countryField.getText();
+                    int eloRating = Integer.parseInt(eloRatingField.getText());
+                    int fideId = Integer.parseInt(fideIdField.getText());
+                    ChessTitleEnum chessTitle = (ChessTitleEnum) titleCombo.getModel().getSelectedItem();
+
+                    dpe = new DataPanelEvent(this, name, surname, gender, country, birthYear, eloRating, fideId, chessTitle);
+
+                    if (listener != null){
+                        listener.dataPanelEventOccured(dpe);
+                    }
+
+                    System.out.println(dpe.toString());
+                }
+            }
+        });
     }
 
     private void setBorders() {
@@ -124,13 +160,17 @@ public class DataPanel extends JPanel {
         gbc.gridx++;
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(submitButton, gbc);
+
+        nameField.requestFocus();
     }
 
     private void createComp() {
         nameField = new JTextField(10);
         surnameField = new JTextField(10);
         maleButton = new JRadioButton("Male");
+        maleButton.setActionCommand("Male");
         femaleButton = new JRadioButton("Female");
+        femaleButton.setActionCommand("Female");
         bg = new ButtonGroup();
         bg.add(maleButton);
         bg.add(femaleButton);
@@ -142,6 +182,10 @@ public class DataPanel extends JPanel {
         titleCombo = new JComboBox<ChessTitleEnum>(ChessTitleEnum.values());
         submitButton = new JButton("Submit");
 
+    }
+
+    public void setListener(DataPanelListener listener) {
+        this.listener = listener;
     }
 
 
