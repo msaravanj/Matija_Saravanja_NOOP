@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class ChessPlayer implements Serializable {
 
+    private static int cnt = 100;
     private int id;
     private String name;
     private String surname;
@@ -27,6 +28,8 @@ public class ChessPlayer implements Serializable {
     }
 
     public ChessPlayer(String name, String surname, String gender, int birthYear, String country, int eloRating, int fideId, ChessTitleEnum chessTitle) {
+        this.id = cnt;
+        cnt++;
         this.name = name;
         this.surname = surname;
         this.gender = gender;

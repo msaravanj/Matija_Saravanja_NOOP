@@ -1,11 +1,13 @@
 package view;
 
+import model.ChessPlayer;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class PresentationPanel extends JPanel {
 
-    private JTextPane textPane;
+    private JTextArea textArea;
     private JScrollPane scrollPane;
     private MainFrame.MyMenuBar menuBar;
 
@@ -30,10 +32,19 @@ public class PresentationPanel extends JPanel {
     }
 
     private void createComp() {
-        textPane = new JTextPane();
-        textPane.setBackground(Color.DARK_GRAY);
-        textPane.setForeground(Color.WHITE);
-        textPane.setFont(new Font("Arial", Font.BOLD, 12));
-        scrollPane = new JScrollPane(textPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        textArea = new JTextArea();
+        textArea.setBackground(Color.DARK_GRAY);
+        textArea.setForeground(Color.WHITE);
+        textArea.setFont(new Font("Arial", Font.BOLD, 12));
+        scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    }
+
+    public void showOnPanel(ChessPlayer chessPlayer){
+        this.textArea.append(chessPlayer.toString()+"\n");
+    }
+
+    public void clearAll4TxtArea(){
+        this.textArea.selectAll();
+        this.textArea.replaceSelection("");
     }
 }

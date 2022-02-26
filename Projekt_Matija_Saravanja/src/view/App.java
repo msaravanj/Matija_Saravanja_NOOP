@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.*;
+import java.text.ParseException;
 
 public class App {
 
@@ -11,8 +12,11 @@ public class App {
             @Override
             public void run() {
 
-                new MainFrame();
-
+                try {
+                    new MainFrame();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

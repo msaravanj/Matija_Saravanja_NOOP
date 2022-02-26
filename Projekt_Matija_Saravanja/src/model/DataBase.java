@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase {
 
@@ -19,10 +20,18 @@ public class DataBase {
         return chessPlayers;
     }
 
-    public void listAllChessPlayers(){
+    public void listAllChessPlayersFromDB(){
         for (ChessPlayer player : chessPlayers) {
             System.out.println(player);
             System.out.println("--------------------------------");
         }
+    }
+
+    public void clearDBData(){
+        chessPlayers.clear();
+    }
+
+    public void addAllChessPlayers2DB(List<ChessPlayer> players){
+        chessPlayers.addAll(players);
     }
 }
