@@ -34,11 +34,14 @@ public class DataPanel extends JPanel {
     private Controller controller;
 
 
-    public DataPanel() throws ParseException {
+    public DataPanel(Controller controller) throws ParseException {
         Dimension dims = getPreferredSize();
         dims.width = 390;
         dims.height = 440;
         setPreferredSize(dims);
+
+
+        this.controller = controller;
 
 
         createComp();
@@ -99,6 +102,7 @@ public class DataPanel extends JPanel {
                             "WARNING", JOptionPane.WARNING_MESSAGE);
                 }else {
                     if (listener != null){
+                        int id = controller.getSizeOfChessPlayerList() + 100;
                         String name = nameField.getText();
                         String surname = surnameField.getText();
                         String gender = bg.getSelection().getActionCommand();
@@ -108,7 +112,7 @@ public class DataPanel extends JPanel {
                         int fideId = Integer.parseInt(fideIdField.getText());
                         ChessTitleEnum chessTitle = (ChessTitleEnum) titleCombo.getModel().getSelectedItem();
 
-                        ChessPlayer chessPlayer = new ChessPlayer(name, surname, gender, birthYear, country, eloRating, fideId, chessTitle);
+                        ChessPlayer chessPlayer = new ChessPlayer(id, name, surname, gender, birthYear, country, eloRating, fideId, chessTitle);
 
                         listener.dataPanelEventOccured(chessPlayer);
 
@@ -130,8 +134,9 @@ public class DataPanel extends JPanel {
         birthYearField.setText("");
         fideIdField.setText("");
         countryCombo.setSelectedIndex(-1);
-        titleCombo.setSelectedItem(0);
+        titleCombo.setSelectedIndex(0);
         nameField.requestFocus();
+
     }
 
     private void setBorders() {

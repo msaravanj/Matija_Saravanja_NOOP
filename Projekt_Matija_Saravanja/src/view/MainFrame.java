@@ -54,11 +54,11 @@ public class MainFrame extends JFrame {
     }
 
     private void createComps() throws ParseException {
+        controller = new Controller();
         menuBar = new MyMenuBar();
-        dataPanel = new DataPanel();
+        dataPanel = new DataPanel(controller);
         presentationPanel = new PresentationPanel(menuBar);
         calculatorPanel = new CalculatorPanel();
-        controller = new Controller();
     }
 
 
@@ -124,11 +124,10 @@ public class MainFrame extends JFrame {
                     if (val == JFileChooser.APPROVE_OPTION){
                         File file = fileChooser.getSelectedFile();
                         System.out.println("File: " + file.getAbsolutePath());
-                        command = new LoadData4File(file);
+                        command = new LoadData4FileCommand(file);
                         command.runCommand();
 
-                        controller.clearPresPanel(presentationPanel);
-                        controller.replaceDBDataWithLoadedData((LoadData4File) command, presentationPanel);
+                        controller.replaceDBDataWithLoadedData((LoadData4FileCommand) command, presentationPanel);
 
                     }
                 }
@@ -139,7 +138,7 @@ public class MainFrame extends JFrame {
                 public void actionPerformed(ActionEvent e) {
                     command = new ConnectCommand();
                     command.runCommand();
-                    JOptionPane.showMessageDialog(MainFrame.this, "Server status","Connection to server has been established!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(MainFrame.this,"Connection to server has been established!","Server status", JOptionPane.INFORMATION_MESSAGE);
                     connection = controller.getConnection((ConnectCommand) command);
                 }
             });
@@ -150,14 +149,51 @@ public class MainFrame extends JFrame {
                     if (connection != null){
                         command = new DisconnectCommand(connection);
                         command.runCommand();
-                        JOptionPane.showMessageDialog(MainFrame.this, "Server status","Disconnected from a server!", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(MainFrame.this,"Disconnected from a server!", "Server status", JOptionPane.INFORMATION_MESSAGE);
                     } else {
-                        JOptionPane.showMessageDialog(MainFrame.this, "Server status","There is no active connection!", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(MainFrame.this, "There is no active connection!", "Server status", JOptionPane.INFORMATION_MESSAGE);
 
                     }
                 }
             });
 
+            saveItem.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (connection != null){
+                        int res = JOptionPane.showOptionDialog(new JFrame(), "Save data to server?","MySQL server",
+                                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+                                new Object[] { "Yes", "No" }, JOptionPane.YES_OPTION);
+                        if (res == JOptionPane.YES_OPTION) {
+                            System.out.println("Saving data to server...");
+                            command = new Save2ServerCommand(connection, controller.getAllChessPlayers4DB());
+                            command.runCommand();
+                            JOptionPane.showMessageDialog(MainFrame.this,"Data successfully saved to server!", "Saving to server info", JOptionPane.INFORMATION_MESSAGE);
+
+                        } else if (res == JOptionPane.NO_OPTION) {
+                            System.out.println("User refused to save data...");
+                        } else if (res == JOptionPane.CLOSED_OPTION) {
+                            System.out.println("Window closed without selecting...");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(MainFrame.this,"Unable to save data to server while application is disconnected from server!", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            });
+
+            loadItem.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (connection != null){
+                        command = new Load4ServerCommand(connection);
+                        command.runCommand();
+                        controller.replaceDBDataWithLoadedServerData((Load4ServerCommand) command, presentationPanel);
+
+                    } else {
+                        JOptionPane.showMessageDialog(MainFrame.this,"Unable to load data from server while application is disconnected from server!", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            });
 
 
         }

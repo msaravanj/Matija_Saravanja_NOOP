@@ -1,61 +1,33 @@
-package test_server_db;
+package controller;
 
 import model.ChessPlayer;
 import model.ChessTitleEnum;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
-public class TestDBServer {
+public class Save2ServerCommand implements Command {
 
     private Connection connection;
     private List<ChessPlayer> chessPlayers;
 
-    public TestDBServer(List<ChessPlayer> chessPlayers){
+    public Save2ServerCommand(Connection connection, List<ChessPlayer> chessPlayers){
+
+        this.connection = connection;
         this.chessPlayers = chessPlayers;
     }
 
-    public void loadData4DServer(){
-        ResultSet results = null;
-        PreparedStatement selectStm = null;
-
-        if (connection != null){
-            System.out.println("Loading data from DB server");
-            String selectsSQL = "select * from ChessPlayerTbl order by name";
-
-            try {
-                selectStm = connection.prepareStatement(selectsSQL);
-                results = selectStm.executeQuery();
-                chessPlayers.clear();
-
-                while (results.next()){
-                    int col = 1;
-                    int id = results.getInt(col++);
-                    String name = results.getString(col++);
-                    String surname = results.getString(col++);
-                    String gender = results.getString(col++);
-                    int birthYear = results.getInt(col++);
-                    String country = results.getString(col++);
-                    int eloRating = results.getInt(col++);
-                    int fideId = results.getInt(col++);
-                    ChessTitleEnum chessTitle = ChessTitleEnum.valueOf(results.getString(col++));
-
-                    ChessPlayer chessPlayer = new ChessPlayer(id, name, surname, gender, birthYear, country, eloRating, fideId, chessTitle);
-                    chessPlayers.add(chessPlayer);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void saveData2DBServer(){
+    @Override
+    public void runCommand() {
         if (connection != null){
 
             // SQL queries
             String countSQL = "select count(*) as count from ChessPlayerTbl where id=?";
-            String insertSQL = "insert into ChessPlayerTbl (id, name, surname, gender, birth_year, country, elo_rating, fide_id, chess_title) values (?,?,?,?,?,?,?,?,?)";
-            String updateSQL = "update ChessPlayerTbl set name=?, surname=?, gender=?, birth_year=?, country=?, elo_rating=?, fide_id=?, chess_title=? where id=?";
+            String insertSQL = "insert into ChessPlayerTbl (id,name,surname,gender,birth_year,country,elo_rating,fide_id,chess_title) values (?,?,?,?,?,?,?,?,?)";
+            String updateSQL = "update ChessPlayerTbl set name=?,surname=?,gender=?,birth_year=?,country=?,elo_rating=?,fide_id=?,chess_title=? where id=?";
 
             // statements
             try {
@@ -76,6 +48,7 @@ public class TestDBServer {
 
                     countStm.setInt(1, id);
                     ResultSet result = countStm.executeQuery();
+                    result.next();
                     int count = result.getInt(1);
                     System.out.println("Counted: " + count);
                     if (count == 0){
@@ -113,11 +86,11 @@ public class TestDBServer {
                         updateStm.executeUpdate();
 
                     }
-                    countStm.close();
-                    insertStm.close();
-                    updateStm.close();
-
                 }
+
+                countStm.close();
+                insertStm.close();
+                updateStm.close();
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -126,38 +99,4 @@ public class TestDBServer {
 
         }
     }
-
-
-    public void connect(){
-        System.out.println("Connecting to a server...");
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://db4free.net:3306/projektnabaza1";
-            String user = "msaravanj";
-            String pswd = "3gRMsa.+KStA2iz";
-
-            connection = DriverManager.getConnection(url, user, pswd);
-            System.out.println("Connected to: " + connection.toString());
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-
-    }
-
-    public void disconnect(){
-        try {
-            connection.close();
-            System.out.println("Success-disconnected from MySQL DB!");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
 }

@@ -32,6 +32,8 @@ public class DataBase {
     }
 
     public void addAllChessPlayers2DB(List<ChessPlayer> players){
-        chessPlayers.addAll(players);
+        for (ChessPlayer cp : players) {
+            chessPlayers.add(cp);
+        }
     }
 }

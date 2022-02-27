@@ -2,12 +2,15 @@ package view;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
+import java.text.ParseException;
 
 public class CalculatorPanel extends JPanel {
 
-    private JTextField yourRatingField;
-    private JTextField oppRatingField;
+    private MaskFormatter rtgMask;
+    private JFormattedTextField yourRatingField;
+    private JFormattedTextField oppRatingField;
     private JRadioButton wonRadio;
     private JRadioButton drawRadio;
     private JRadioButton lostRadio;
@@ -126,8 +129,15 @@ public class CalculatorPanel extends JPanel {
 
 
     private void createComps(){
-        yourRatingField = new JTextField(10);
-        oppRatingField = new JTextField(10);
+        try {
+            rtgMask = new MaskFormatter("####");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        rtgMask.setPlaceholderCharacter('#');
+
+        yourRatingField = new JFormattedTextField(rtgMask);
+        oppRatingField = new JFormattedTextField(rtgMask);
         wonRadio = new JRadioButton("won");
         drawRadio = new JRadioButton("draw");
         lostRadio = new JRadioButton("lost");

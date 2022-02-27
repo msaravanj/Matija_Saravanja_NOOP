@@ -10,7 +10,6 @@ import java.util.List;
 public class Controller {
 
     private DataBase db;
-    private Connection connection;
 
     public Controller(){
         db = new DataBase();
@@ -28,16 +27,39 @@ public class Controller {
         presentationPanel.clearAll4TxtArea();
     }
 
-    public void replaceDBDataWithLoadedData(LoadData4File loadData4File, PresentationPanel presPanel){
+    public void replaceDBDataWithLoadedData(LoadData4FileCommand loadData4File, PresentationPanel presPanel){
         db.clearDBData();
         db.addAllChessPlayers2DB(loadData4File.getLoadedChessPlayers());
 
-        for (ChessPlayer player : getAllChessPlayers4DB()) {
-            presPanel.showOnPanel(player);
-        }
+        showAllChessPlayersOnPresPanel(presPanel);
     }
 
     public Connection getConnection(ConnectCommand command) {
        return command.getConnection();
     }
+
+    public void showAllChessPlayersOnPresPanel(PresentationPanel presPanel){
+        for (ChessPlayer cp : db.getAllChessPlayers4DB()) {
+            presPanel.showOnPanel(cp);
+        }
+    }
+
+    public void replaceDBDataWithLoadedServerData(Load4ServerCommand cmd, PresentationPanel presPanel){
+        List<ChessPlayer> list = cmd.getLoadedChessPlayers();
+
+        presPanel.clearAll4TxtArea();
+        db.clearDBData();
+        db.addAllChessPlayers2DB(list);
+
+        for (ChessPlayer cp : db.getAllChessPlayers4DB()) {
+            presPanel.showOnPanel(cp);
+        }
+    }
+
+
+    public int getSizeOfChessPlayerList(){
+        return db.getAllChessPlayers4DB().size();
+    }
 }
+
+

@@ -6,12 +6,12 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 
-public class LoadData4File implements Command {
+public class LoadData4FileCommand implements Command {
 
     private File file;
     private List<ChessPlayer> chessPlayers;
 
-    public LoadData4File(File file){
+    public LoadData4FileCommand(File file){
         this.file = file;
     }
 
