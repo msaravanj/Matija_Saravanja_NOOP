@@ -7,6 +7,10 @@ import view.PresentationPanel;
 import java.sql.Connection;
 import java.util.List;
 
+/**
+ * Klasa koja je posrednik između view-a i modela. Sadrži metode koje delegiraju metodama iz paketa model i paketa view. Glavni
+ */
+
 public class Controller {
 
     private DataBase db;

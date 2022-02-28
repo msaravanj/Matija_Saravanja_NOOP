@@ -4,10 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Klasa koja implementira sučelje Command na način da izvršava spajanje na server
+ *
+ * @author Matija Šaravanja
+ *
+ * @since veljača, 2022.
+ */
+
 public class ConnectCommand implements Command {
 
     private Connection connection;
 
+    /**
+     * Metoda koja povezuje aplikaciju sa serverom
+     */
     @Override
     public void runCommand() {
         System.out.println("Connecting to a server...");
