@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.sql.Connection;
 import java.text.ParseException;
@@ -42,6 +43,7 @@ public class MainFrame extends JFrame {
     }
 
     private void activateApp() {
+
        dataPanel.setListener(new DataPanelListener() {
            @Override
            public void dataPanelEventOccured(ChessPlayer chessPlayer) {
@@ -51,6 +53,7 @@ public class MainFrame extends JFrame {
                controller.addChessPlayer2DB(chessPlayer);
            }
        });
+
     }
 
     private void createComps() throws ParseException {
@@ -195,6 +198,16 @@ public class MainFrame extends JFrame {
                 }
             });
 
+
+            serverMenu.setMnemonic(KeyEvent.VK_E);
+            connectItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_U,ActionEvent.CTRL_MASK));
+            disconnectItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, ActionEvent.CTRL_MASK));
+            saveItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
+            loadItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
+
+            fileMenu.setMnemonic(KeyEvent.VK_E);
+            saveDataItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,ActionEvent.CTRL_MASK));
+            loadDataItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
 
         }
 

@@ -27,7 +27,7 @@ public class Load4ServerCommand implements Command {
 
         if (connection != null){
             System.out.println("Loading data from DB server");
-            String selectsSQL = "select * from ChessPlayerTbl order by elo_rating";
+            String selectsSQL = "select * from ChessPlayerTbl order by elo_rating desc";
 
             try {
                 selectStm = connection.prepareStatement(selectsSQL);

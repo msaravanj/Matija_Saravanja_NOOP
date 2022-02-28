@@ -28,6 +28,7 @@ public class Controller {
     }
 
     public void replaceDBDataWithLoadedData(LoadData4FileCommand loadData4File, PresentationPanel presPanel){
+        presPanel.clearAll4TxtArea();
         db.clearDBData();
         db.addAllChessPlayers2DB(loadData4File.getLoadedChessPlayers());
 
