@@ -4,7 +4,7 @@ Projekt sadrži Java Swing GUI aplikaciju u kojoj su korišteni sljedeći predlo
 
 **Aplikaciju klonirati i pokrenuti po sljedećim uputama:**
   * ```git clone https://github.com/msaravanj/Matija_Saravanja_NOOP```
-  * ```(projekt otvoriti u IntelliJ IDEA ili Eclipse IDE)```
+  * ```(projekt Projekt_Matija_Saravanja otvoriti u IntelliJ IDEA ili Eclipse IDE)```
   * ```(pokrenuti klasu App.java koja se nalazi unutar src.view paketa)```
 
 
