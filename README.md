@@ -8,5 +8,5 @@ Projekt sadrži Java Swing GUI aplikaciju u kojoj su korišteni sljedeći predlo
   * ```(pokrenuti klasu App.java koja se nalazi unutar src.view paketa)```
 
 
-U aplikaciji korišten je sljedeći API: https://github.com/xRuiAlves/fide-ratings-scraper/blob/master/README.md#api .
+U aplikaciji korišteni su MySQL server i sljedeći API: https://github.com/xRuiAlves/fide-ratings-scraper/blob/master/README.md#api .
 Također su korištene dvije vanjske biblioteke: mysql connector java 8.0.28 i json_20211205.jar.
