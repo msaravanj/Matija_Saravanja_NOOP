@@ -8,7 +8,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * Klasa koja implementira sucelje Command na nacin da izvrsava spremanje objekata u serversku bazu podataka
+ *
+ * @author Matija Saravanja
+ *
+ * @since veljaca, 2022.
+ */
 public class Save2ServerCommand implements Command {
 
     private Connection connection;
@@ -20,6 +26,9 @@ public class Save2ServerCommand implements Command {
         this.chessPlayers = chessPlayers;
     }
 
+    /**
+     * Metoda koja sprema objekte tipa ChessPlayer koji se nalaze u aplikacijskom "database-u" na server
+     */
     @Override
     public void runCommand() {
         if (connection != null){

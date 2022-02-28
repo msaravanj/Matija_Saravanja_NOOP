@@ -11,7 +11,13 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.sql.Connection;
 import java.text.ParseException;
-
+/**
+ * Klasa koja predstavlja glavni prozor aplikacije i na koji se postavljaju ostali paneli i menu bar
+ *
+ * @author Matija Saravanja
+ *
+ * @since veljaca, 2022.
+ */
 public class MainFrame extends JFrame {
 
     private DataPanel dataPanel;
@@ -23,7 +29,7 @@ public class MainFrame extends JFrame {
     private Command command;
     private Connection connection;
 
-    public MainFrame() throws ParseException {
+    public MainFrame() {
         super("Chess Players & Rating Calculator App");
 
         setLayout(new BorderLayout());
@@ -31,7 +37,6 @@ public class MainFrame extends JFrame {
         add(presentationPanel, BorderLayout.NORTH);
         add(dataPanel, BorderLayout.WEST);
         add(calculatorPanel, BorderLayout.EAST);
-
 
         setSize(800,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,6 +47,11 @@ public class MainFrame extends JFrame {
         activateApp();
     }
 
+    /**
+     * Metoda koja aktivira aplikaciju tako sto postavlja DataPanelListener i
+     * dostavlja objekt tipa ChessPlayer kad se dogodi dogadaj u Data Panelu
+     *
+     */
     private void activateApp() {
 
        dataPanel.setListener(new DataPanelListener() {
@@ -56,16 +66,25 @@ public class MainFrame extends JFrame {
 
     }
 
-    private void createComps() throws ParseException {
+    /**
+     * Metoda koja inicijalizira komponente u glavnom prozoru
+     */
+    private void createComps() {
         controller = new Controller();
         menuBar = new MyMenuBar();
-        dataPanel = new DataPanel(controller);
+        try {
+            dataPanel = new DataPanel(controller);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         presentationPanel = new PresentationPanel(menuBar);
         calculatorPanel = new CalculatorPanel();
     }
 
 
-
+    /**
+     * Unutarnja klasa koja predstavlja Menu Bar aplikacije
+     */
     class MyMenuBar extends JMenuBar {
 
         JMenu fileMenu;
@@ -88,8 +107,10 @@ public class MainFrame extends JFrame {
             activateMenuBar();
         }
 
+        /**
+         * Metoda koja aktivira dugmad na menu baru
+         */
         private void activateMenuBar() {
-
             exitItem.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -199,6 +220,14 @@ public class MainFrame extends JFrame {
             });
 
 
+            setMnemonicsAndAcceleratorsForMenuBarItems();
+
+        }
+
+        /**
+         * Metoda koja postavlja mnemonike i akceleratore na Menu Bar Items
+         */
+        private void setMnemonicsAndAcceleratorsForMenuBarItems(){
             serverMenu.setMnemonic(KeyEvent.VK_E);
             connectItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_U,ActionEvent.CTRL_MASK));
             disconnectItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, ActionEvent.CTRL_MASK));
@@ -208,9 +237,11 @@ public class MainFrame extends JFrame {
             fileMenu.setMnemonic(KeyEvent.VK_E);
             saveDataItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,ActionEvent.CTRL_MASK));
             loadDataItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
-
         }
 
+        /**
+         * Metoda koja postavlja menu bar items na menu bar
+         */
         private void layoutComp() {
             fileMenu.add(saveDataItem);
             fileMenu.add(loadDataItem);
@@ -227,6 +258,9 @@ public class MainFrame extends JFrame {
             this.add(serverMenu);
         }
 
+        /**
+         * Metoda koja inicijalizira komponente menu bara
+         */
         private void createComp() {
             fileMenu = new JMenu("File");
             serverMenu = new JMenu("Server");

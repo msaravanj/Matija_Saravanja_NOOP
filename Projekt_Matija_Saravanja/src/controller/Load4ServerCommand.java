@@ -9,7 +9,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Klasa koja implementira sucelje Command na nacin da ucitava podatke sa servera
+ *
+ * @author Matija Saravanja
+ *
+ * @since veljaca, 2022.
+ */
 public class Load4ServerCommand implements Command {
 
     private Connection connection;
@@ -20,6 +26,9 @@ public class Load4ServerCommand implements Command {
         chessPlayers = new ArrayList<ChessPlayer>();
     }
 
+    /**
+     * metoda koja puni listu aplikacijske "chessbase" sa sadrzajem sa serverske baze podataka
+     */
     @Override
     public void runCommand() {
         ResultSet results = null;

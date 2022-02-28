@@ -1,8 +1,14 @@
 package view;
 
 import javax.swing.*;
-import java.text.ParseException;
 
+/**
+ * Klasa sa main metodom koja pokrece aplikaciju
+ *
+ * @author Matija Saravanja
+ *
+ * @since veljaca, 2022.
+ */
 public class App {
 
     public static void main(String[] args) {
@@ -12,11 +18,7 @@ public class App {
             @Override
             public void run() {
 
-                try {
-                    new MainFrame();
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                new MainFrame();
             }
         });
     }

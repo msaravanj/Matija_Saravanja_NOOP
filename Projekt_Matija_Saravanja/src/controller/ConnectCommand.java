@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Klasa koja implementira sučelje Command na način da izvršava spajanje na server
+ * Klasa koja implementira sucelje Command na nacin da izvrsava spajanje na server
  *
- * @author Matija Šaravanja
+ * @author Matija Saravanja
  *
- * @since veljača, 2022.
+ * @since veljaca, 2022.
  */
 
 public class ConnectCommand implements Command {

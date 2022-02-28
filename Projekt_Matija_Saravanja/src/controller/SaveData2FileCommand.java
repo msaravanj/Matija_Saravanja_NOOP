@@ -5,7 +5,13 @@ import model.ChessPlayer;
 import javax.swing.*;
 import java.io.*;
 import java.util.List;
-
+/**
+ * Klasa koja implementira sucelje Command na nacin da izvrsava spremanje objekata u datoteku na racunalo
+ *
+ * @author Matija Saravanja
+ *
+ * @since veljaca, 2022.
+ */
 public class SaveData2FileCommand implements Command {
 
     private File file;
@@ -16,6 +22,9 @@ public class SaveData2FileCommand implements Command {
         this.chessPlayers = chessPlayers;
     }
 
+    /**
+     * metoda koja sprema objekte iz "database-a" u racunalnu datoteku
+     */
     @Override
     public void runCommand() {
 

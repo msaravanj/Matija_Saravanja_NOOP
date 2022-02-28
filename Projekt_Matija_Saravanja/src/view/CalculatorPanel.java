@@ -1,8 +1,6 @@
 package view;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.text.MaskFormatter;
@@ -17,7 +15,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.ParseException;
-
+/**
+ * Klasa koja predstavlja desni panel za izracunavanje promjene rejtinga nakon odigranog meca
+ *
+ * @author Matija Saravanja
+ *
+ * @since veljaca, 2022.
+ */
 public class CalculatorPanel extends JPanel {
 
     private MaskFormatter rtgMask;
@@ -49,85 +53,65 @@ public class CalculatorPanel extends JPanel {
         setBorders();
     }
 
+    /**
+     * GET metoda koja dohvaca rejting igraca iz API-ja s interneta po igracevom FIDE rejtingu koji je potrebno upisati u skocni prozor
+     * @return
+     *         vraca rejting tipa String
+     */
+    private String getRating4APIByFideId(){
+        int fideId = Integer.parseInt(JOptionPane.showInputDialog("Enter FIDE id of player: ", 1503014));
+        JSONObject myResponse = null;
+        try {
+            URL url = new URL("https://fide-ratings-scraper.herokuapp.com/player/"+fideId+"/elo");
+            connection = (HttpURLConnection) url.openConnection();
 
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(5000);
+            connection.setReadTimeout(5000);
 
+            int status = connection.getResponseCode();
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            myResponse = new JSONObject(response.toString());
+
+        } catch (MalformedURLException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            connection.disconnect();
+        }
+
+        return myResponse.getString("standard_elo");
+    }
+
+    /**
+     * Metoda koja aktivira komponente ovog panela
+     *
+     */
     private void activateComp() {
 
         loadYrsRtgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                int fideId = Integer.parseInt(JOptionPane.showInputDialog("Enter FIDE id of player: ", 1503014));
-                JSONObject myResponse = null;
-                try {
-                    URL url = new URL("https://fide-ratings-scraper.herokuapp.com/player/"+fideId+"/elo");
-                    connection = (HttpURLConnection) url.openConnection();
-
-                    connection.setRequestMethod("GET");
-                    connection.setConnectTimeout(5000);
-                    connection.setReadTimeout(5000);
-
-                    int status = connection.getResponseCode();
-
-                    BufferedReader in = new BufferedReader(
-                            new InputStreamReader(connection.getInputStream()));
-                    String inputLine;
-                    StringBuffer response = new StringBuffer();
-                    while ((inputLine = in.readLine()) != null) {
-                        response.append(inputLine);
-                    }
-                    in.close();
-
-                    myResponse = new JSONObject(response.toString());
-
-                } catch (MalformedURLException ex) {
-                    ex.printStackTrace();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                } finally {
-                    connection.disconnect();
-                }
-
-                yourRatingField.setText(myResponse.getString("standard_elo"));
-
+                yourRatingField.setText(getRating4APIByFideId());
             }
         });
 
         loadOppRtgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int fideId = Integer.parseInt(JOptionPane.showInputDialog("Enter FIDE id of player: ", 1503014));
-                JSONObject myResponse = null;
-                try {
-                    URL url = new URL("https://fide-ratings-scraper.herokuapp.com/player/"+fideId+"/elo");
-                    connection = (HttpURLConnection) url.openConnection();
 
-                    connection.setRequestMethod("GET");
-                    connection.setConnectTimeout(5000);
-                    connection.setReadTimeout(5000);
-
-                    int status = connection.getResponseCode();
-
-                    BufferedReader in = new BufferedReader(
-                            new InputStreamReader(connection.getInputStream()));
-                    String inputLine;
-                    StringBuffer response = new StringBuffer();
-                    while ((inputLine = in.readLine()) != null) {
-                        response.append(inputLine);
-                    }
-                    in.close();
-
-                    myResponse = new JSONObject(response.toString());
-
-                } catch (MalformedURLException ex) {
-                    ex.printStackTrace();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                } finally {
-                    connection.disconnect();
-                }
-
-                oppRatingField.setText(myResponse.getString("standard_elo"));
+                oppRatingField.setText(getRating4APIByFideId());
             }
         });
 
@@ -167,6 +151,9 @@ public class CalculatorPanel extends JPanel {
         });
     }
 
+    /**
+     * Metoda koja rasporeduje komponente po panelu
+     */
     private void layoutComp() {
 
         setLayout(new GridBagLayout());
@@ -246,6 +233,9 @@ public class CalculatorPanel extends JPanel {
 
     }
 
+    /**
+     * Metoda koja postavlja granice panela
+     */
     private void setBorders() {
         Border inner = BorderFactory.createTitledBorder("Rating Calculator");
         Border outer = BorderFactory.createEmptyBorder(5, 2, 5, 5);
@@ -254,6 +244,9 @@ public class CalculatorPanel extends JPanel {
     }
 
 
+    /**
+     * Metoda koja inicijalizira i definira komponente panela
+     */
     private void createComps(){
         try {
             rtgMask = new MaskFormatter("####");

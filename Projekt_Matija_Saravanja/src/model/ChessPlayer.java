@@ -2,6 +2,13 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * Klasa koja predstavlja sahista i njegove informacije
+ *
+ * @author Matija Saravanja
+ *
+ * @since veljaca, 2022.
+ */
 public class ChessPlayer implements Serializable {
 
     private static int cnt = 100;

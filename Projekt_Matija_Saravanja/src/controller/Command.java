@@ -1,11 +1,11 @@
 package controller;
 
 /**
- * Sučelje za Command Pattern gdje će konkretizirane klase implementirati izvršavajuću metodu runCommand();
+ * Sucelje za Command Pattern gdje ce konkretizirane klase implementirati izvrsavajucu metodu runCommand();
  *
- * @author Matija Šaravanja
+ * @author Matija Saravanja
  *
- * @since veljača, 2022.
+ * @since veljaca, 2022.
  */
 
 public interface Command {

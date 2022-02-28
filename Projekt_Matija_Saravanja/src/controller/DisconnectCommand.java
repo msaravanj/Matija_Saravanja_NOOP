@@ -2,7 +2,13 @@ package controller;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
+/**
+ * Klasa koja implementira sucelje Command na nacin da izvrsava odspajanje sa server
+ *
+ * @author Matija Saravanja
+ *
+ * @since veljaca, 2022.
+ */
 public class DisconnectCommand implements Command {
 
     private Connection connection;
@@ -11,6 +17,9 @@ public class DisconnectCommand implements Command {
         this.connection = connection;
     }
 
+    /**
+     * metoda koja izvrsava odspajanje sa servera
+     */
     @Override
     public void runCommand() {
         try {
