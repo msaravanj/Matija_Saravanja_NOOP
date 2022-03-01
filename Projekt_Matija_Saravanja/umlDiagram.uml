@@ -3,485 +3,499 @@
   <ID>JAVA</ID>
   <OriginalElement>C:/Users/dell/Desktop/GitHub/NOOP/Matija_Saravanja_NOOP/Projekt_Matija_Saravanja</OriginalElement>
   <nodes>
-    <node x="962.510416666667" y="1625.0">view.MainFrame</node>
-    <node x="2722.34375" y="828.5">controller.DisconnectCommand</node>
-    <node x="1928.3437500000002" y="817.0">controller.Load4ServerCommand</node>
-    <node x="2611.84375" y="393.5">controller.Command</node>
-    <node x="302.69642857142867" y="0.0">model.ChessTitleEnum</node>
-    <node x="671.8437500000002" y="1340.0">view.DataPanel</node>
-    <node x="1742.5" y="1891.5">view.App</node>
-    <node x="172.86793154761835" y="1091.5">view.DataPanel.MyComboBoxRenderer</node>
-    <node x="662.8679315476182" y="1014.0">controller.Controller</node>
-    <node x="1296.3437500000002" y="817.0">controller.LoadData4FileCommand</node>
-    <node x="1191.8679315476184" y="1103.0">view.DataPanelListener</node>
-    <node x="1568.3437500000002" y="828.5">controller.Save2ServerCommand</node>
-    <node x="2200.34375" y="828.5">controller.SaveData2FileCommand</node>
-    <node x="958.0345982142849" y="1374.0">view.CalculatorPanel</node>
-    <node x="920.010416666667" y="1961.0">view.PresentationPanel</node>
-    <node x="614.3437500000002" y="784.0">model.DataBase</node>
-    <node x="947.510416666667" y="1778.0">view.MainFrame.MyMenuBar</node>
-    <node x="2530.34375" y="805.5">controller.ConnectCommand</node>
-    <node x="1362.9512648809516" y="161.0">model.ChessPlayer</node>
+    <node x="556.7470739700368" y="2109.0">view.MainFrame</node>
+    <node x="2812.6637406367036" y="985.0">controller.DisconnectCommand</node>
+    <node x="2292.6637406367036" y="963.0">controller.Load4ServerCommand</node>
+    <node x="2805.0833333333335" y="550.5">controller.Command</node>
+    <node x="1745.4349250936334" y="0.0">model.ChessTitleEnum</node>
+    <node x="976.1637406367036" y="1530.0">view.DataPanel</node>
+    <node x="0.0" y="2409.0">view.App</node>
+    <node x="444.86949906367033" y="1270.0">view.DataPanel.MyComboBoxRenderer</node>
+    <node x="1758.6637406367036" y="963.0">controller.LoadData4FileCommand</node>
+    <node x="934.8694990636703" y="1193.0">controller.Controller</node>
+    <node x="1463.8694990636704" y="1282.5">view.DataPanelListener</node>
+    <node x="2059.6637406367036" y="974.0">controller.SaveData2FileCommand</node>
+    <node x="1525.6637406367036" y="974.0">controller.Save2ServerCommand</node>
+    <node x="163.86949906367045" y="1552.0">view.CalculatorPanel</node>
+    <node x="97.25" y="930.0">view.PresentationPanel</node>
+    <node x="980.9166666666666" y="941.0">model.DataBase</node>
+    <node x="2594.6637406367036" y="974.0">controller.ConnectCommand</node>
+    <node x="1677.536165730337" y="329.0">model.ChessPlayer</node>
+    <node x="0.0" y="406.0">view.MainFrame.MyMenuBar</node>
   </nodes>
   <notes />
   <edges>
     <edge source="controller.LoadData4FileCommand" target="controller.Command" relationship="REALIZATION">
-      <point x="84.00000000000023" y="-50.0" />
-      <point x="1506.3437500000005" y="732.0" />
-      <point x="2483.7012648809514" y="732.0" />
-      <point x="2483.7012648809514" y="722.0" />
-      <point x="2637.84375" y="722.0" />
+      <point x="93.66666666666629" y="-61.5" />
+      <point x="1992.8304073033698" y="868.0" />
+      <point x="2668.3694990636704" y="868.0" />
+      <point x="2668.3694990636704" y="858.0" />
+      <point x="2831.0833333333335" y="858.0" />
       <point x="-52.0" y="27.0" />
     </edge>
     <edge source="controller.SaveData2FileCommand" target="controller.Command" relationship="REALIZATION">
-      <point x="103.33333333333348" y="-38.5" />
-      <point x="2458.677083333334" y="732.0" />
-      <point x="2483.7012648809514" y="732.0" />
-      <point x="2483.7012648809514" y="722.0" />
-      <point x="2637.84375" y="722.0" />
+      <point x="71.0" y="-50.5" />
+      <point x="2237.1637406367036" y="868.0" />
+      <point x="2668.3694990636704" y="868.0" />
+      <point x="2668.3694990636704" y="858.0" />
+      <point x="2831.0833333333335" y="858.0" />
       <point x="-52.0" y="27.0" />
     </edge>
     <edge source="view.MainFrame.MyMenuBar" target="view.MainFrame" relationship="INNER_CLASS">
-      <point x="0.0" y="-60.5" />
-      <point x="1034.010416666667" y="1756.0" />
-      <point x="1020.260416666667" y="1756.0" />
-      <point x="-19.25" y="49.5" />
+      <point x="-127.5" y="171.5" />
+      <point x="42.5" y="888.0" />
+      <point x="21.12242509363341" y="888.0" />
+      <point x="21.12242509363341" y="2078.0" />
+      <point x="587.1220739700368" y="2078.0" />
+      <point x="-91.125" y="-127.5" />
     </edge>
     <edge source="view.DataPanel" target="view.DataPanelListener" relationship="DEPENDENCY">
-      <point x="23.375" y="-105.5" />
-      <point x="788.7187500000002" y="1308.0" />
-      <point x="1281.3679315476184" y="1308.0" />
-      <point x="1281.3679315476184" y="1298.0" />
-      <point x="1395.8679315476184" y="1298.0" />
+      <point x="102.75" y="-248.5" />
+      <point x="1215.9137406367036" y="1498.0" />
+      <point x="1552.8694990636704" y="1498.0" />
+      <point x="1552.8694990636704" y="1488.0" />
+      <point x="1558.1194990636704" y="1488.0" />
+      <point x="1558.1194990636704" y="1448.0" />
+      <point x="1667.8694990636704" y="1448.0" />
       <point x="68.0" y="27.0" />
     </edge>
     <edge source="view.MainFrame" target="view.DataPanelListener" relationship="DEPENDENCY">
-      <point x="51.33333333333337" y="-49.5" />
-      <point x="1090.8437500000002" y="1603.0" />
-      <point x="1796.9880952380952" y="1603.0" />
-      <point x="1796.9880952380952" y="1573.0" />
-      <point x="1281.3679315476184" y="1573.0" />
-      <point x="1281.3679315476184" y="1298.0" />
-      <point x="1395.8679315476184" y="1298.0" />
+      <point x="91.125" y="-127.5" />
+      <point x="769.3720739700368" y="2078.0" />
+      <point x="1554.9137406367036" y="2078.0" />
+      <point x="1554.9137406367036" y="2048.0" />
+      <point x="1563.3694990636704" y="2048.0" />
+      <point x="1563.3694990636704" y="1478.0" />
+      <point x="1558.1194990636704" y="1478.0" />
+      <point x="1558.1194990636704" y="1448.0" />
+      <point x="1667.8694990636704" y="1448.0" />
       <point x="68.0" y="27.0" />
     </edge>
     <edge source="model.DataBase" target="model.ChessPlayer" relationship="DEPENDENCY">
-      <point x="-76.0" y="-83.0" />
-      <point x="690.3437500000002" y="762.0" />
-      <point x="799.5000000000001" y="762.0" />
-      <point x="799.5000000000001" y="702.0" />
-      <point x="1434.4512648809516" y="702.0" />
-      <point x="-143.0" y="259.5" />
+      <point x="-76.25" y="-83.5" />
+      <point x="1057.1666666666665" y="898.0" />
+      <point x="1237.4974250936334" y="898.0" />
+      <point x="1237.4974250936334" y="858.0" />
+      <point x="1713.2028323970035" y="858.0" />
+      <point x="-71.33333333333348" y="248.5" />
     </edge>
     <edge source="view.MainFrame" target="view.PresentationPanel" relationship="CREATE">
-      <point x="-57.75" y="49.5" />
-      <point x="981.760416666667" y="1746.0" />
-      <point x="980.510416666667" y="1746.0" />
-      <point x="980.510416666667" y="1756.0" />
-      <point x="937.010416666667" y="1756.0" />
-      <point x="937.010416666667" y="1940.0" />
-      <point x="956.3437500000002" y="1940.0" />
-      <point x="-72.66666666666669" y="-71.5" />
+      <point x="-30.375" y="-127.5" />
+      <point x="647.8720739700368" y="2088.0" />
+      <point x="228.16374063670355" y="2088.0" />
+      <point x="228.16374063670355" y="2068.0" />
+      <point x="93.86949906367045" y="2068.0" />
+      <point x="93.86949906367045" y="1171.0" />
+      <point x="133.41666666666674" y="1171.0" />
+      <point x="-72.33333333333326" y="94.5" />
     </edge>
     <edge source="controller.Save2ServerCommand" target="model.ChessPlayer" relationship="TO_MANY">
-      <point x="0.0" y="-38.5" />
-      <point x="1738.3437500000002" y="752.0" />
-      <point x="1517.5937500000002" y="752.0" />
-      <point x="1517.5937500000002" y="702.0" />
-      <point x="1577.4512648809516" y="702.0" />
-      <point x="0.0" y="259.5" />
+      <point x="0.0" y="-50.5" />
+      <point x="1632.1637406367036" y="888.0" />
+      <point x="1784.536165730337" y="888.0" />
+      <point x="0.0" y="248.5" />
     </edge>
     <edge source="controller.LoadData4FileCommand" target="model.ChessPlayer" relationship="TO_MANY">
-      <point x="2.2737367544323206E-13" y="-50.0" />
-      <point x="1422.3437500000005" y="752.0" />
-      <point x="1517.5937500000002" y="752.0" />
-      <point x="1517.5937500000002" y="702.0" />
-      <point x="1577.4512648809516" y="702.0" />
-      <point x="0.0" y="259.5" />
+      <point x="-2.2737367544323206E-13" y="-61.5" />
+      <point x="1899.1637406367033" y="888.0" />
+      <point x="1784.536165730337" y="888.0" />
+      <point x="0.0" y="248.5" />
     </edge>
     <edge source="controller.SaveData2FileCommand" target="model.ChessPlayer" relationship="TO_MANY">
-      <point x="-103.33333333333348" y="-38.5" />
-      <point x="2252.010416666667" y="752.0" />
-      <point x="1517.5937500000002" y="752.0" />
-      <point x="1517.5937500000002" y="702.0" />
-      <point x="1577.4512648809516" y="702.0" />
-      <point x="0.0" y="259.5" />
+      <point x="-71.0" y="-50.5" />
+      <point x="2095.1637406367036" y="888.0" />
+      <point x="1784.536165730337" y="888.0" />
+      <point x="0.0" y="248.5" />
     </edge>
     <edge source="view.DataPanel" target="controller.Controller" relationship="TO_ONE">
-      <point x="70.125" y="-105.5" />
-      <point x="835.4687500000002" y="1318.0" />
-      <point x="1259.8679315476184" y="1318.0" />
-      <point x="1259.8679315476184" y="1298.0" />
-      <point x="947.5345982142849" y="1298.0" />
-      <point x="947.5345982142849" y="1288.0" />
-      <point x="1087.0345982142849" y="1288.0" />
-      <point x="169.66666666666652" y="116.0" />
+      <point x="34.25" y="-248.5" />
+      <point x="1147.4137406367036" y="1508.0" />
+      <point x="1531.8694990636704" y="1508.0" />
+      <point x="1531.8694990636704" y="1478.0" />
+      <point x="1265.9137406367036" y="1478.0" />
+      <point x="1265.9137406367036" y="1468.0" />
+      <point x="1189.3694990636704" y="1468.0" />
+      <point x="0.0" y="116.5" />
     </edge>
     <edge source="view.DataPanel.MyComboBoxRenderer" target="view.DataPanel" relationship="INNER_CLASS">
-      <point x="-117.5" y="38.5" />
-      <point x="290.36793154761835" y="1308.0" />
-      <point x="695.2187500000002" y="1308.0" />
-      <point x="-70.125" y="-105.5" />
+      <point x="-117.5" y="39.5" />
+      <point x="562.3694990636703" y="1498.0" />
+      <point x="1010.4137406367036" y="1498.0" />
+      <point x="-102.75" y="-248.5" />
     </edge>
     <edge source="controller.Save2ServerCommand" target="model.ChessPlayer" relationship="DEPENDENCY">
-      <point x="-113.33333333333326" y="-38.5" />
-      <point x="1625.010416666667" y="762.0" />
-      <point x="1580.3437500000005" y="762.0" />
-      <point x="1580.3437500000005" y="722.0" />
-      <point x="799.5000000000001" y="722.0" />
-      <point x="799.5000000000001" y="702.0" />
-      <point x="1434.4512648809516" y="702.0" />
-      <point x="-143.0" y="259.5" />
+      <point x="-71.0" y="-50.5" />
+      <point x="1561.1637406367036" y="908.0" />
+      <point x="1563.4137406367036" y="908.0" />
+      <point x="1563.4137406367036" y="868.0" />
+      <point x="1237.4974250936334" y="868.0" />
+      <point x="1237.4974250936334" y="858.0" />
+      <point x="1713.2028323970035" y="858.0" />
+      <point x="-71.33333333333348" y="248.5" />
     </edge>
     <edge source="view.MainFrame" target="controller.Command" relationship="TO_ONE">
-      <point x="0.0" y="-49.5" />
-      <point x="1039.510416666667" y="1583.0" />
-      <point x="2966.84375" y="1583.0" />
-      <point x="2966.84375" y="722.0" />
-      <point x="2689.84375" y="722.0" />
+      <point x="30.375" y="-127.5" />
+      <point x="708.6220739700368" y="2088.0" />
+      <point x="1118.1637406367036" y="2088.0" />
+      <point x="1118.1637406367036" y="2058.0" />
+      <point x="3004.1637406367036" y="2058.0" />
+      <point x="3004.1637406367036" y="858.0" />
+      <point x="2883.0833333333335" y="858.0" />
       <point x="0.0" y="27.0" />
     </edge>
     <edge source="view.DataPanelListener" target="model.ChessPlayer" relationship="DEPENDENCY">
       <point x="0.0" y="-27.0" />
-      <point x="1327.8679315476184" y="982.0" />
-      <point x="603.8437500000002" y="982.0" />
-      <point x="603.8437500000002" y="762.0" />
-      <point x="799.5000000000001" y="762.0" />
-      <point x="799.5000000000001" y="702.0" />
-      <point x="1434.4512648809516" y="702.0" />
-      <point x="-143.0" y="259.5" />
+      <point x="1599.8694990636704" y="1161.0" />
+      <point x="970.4166666666666" y="1161.0" />
+      <point x="970.4166666666666" y="898.0" />
+      <point x="1237.4974250936334" y="898.0" />
+      <point x="1237.4974250936334" y="858.0" />
+      <point x="1713.2028323970035" y="858.0" />
+      <point x="-71.33333333333348" y="248.5" />
     </edge>
     <edge source="model.DataBase" target="model.ChessPlayer" relationship="TO_MANY">
-      <point x="76.0" y="-83.0" />
-      <point x="842.3437500000002" y="752.0" />
-      <point x="1517.5937500000002" y="752.0" />
-      <point x="1517.5937500000002" y="702.0" />
-      <point x="1577.4512648809516" y="702.0" />
-      <point x="0.0" y="259.5" />
+      <point x="76.25" y="-83.5" />
+      <point x="1209.6666666666665" y="888.0" />
+      <point x="1784.536165730337" y="888.0" />
+      <point x="0.0" y="248.5" />
     </edge>
     <edge source="controller.SaveData2FileCommand" target="model.ChessPlayer" relationship="CREATE">
-      <point x="0.0" y="-38.5" />
-      <point x="2355.34375" y="742.0" />
-      <point x="2189.09375" y="742.0" />
-      <point x="2189.09375" y="712.0" />
-      <point x="1720.4512648809516" y="712.0" />
-      <point x="143.0" y="259.5" />
+      <point x="0.0" y="-50.5" />
+      <point x="2166.1637406367036" y="878.0" />
+      <point x="2294.1429073033705" y="878.0" />
+      <point x="2294.1429073033705" y="858.0" />
+      <point x="1855.8694990636704" y="858.0" />
+      <point x="71.33333333333348" y="248.5" />
     </edge>
     <edge source="controller.LoadData4FileCommand" target="model.ChessPlayer" relationship="DEPENDENCY">
-      <point x="-83.99999999999977" y="-50.0" />
-      <point x="1338.3437500000005" y="762.0" />
-      <point x="799.5000000000001" y="762.0" />
-      <point x="799.5000000000001" y="702.0" />
-      <point x="1434.4512648809516" y="702.0" />
-      <point x="-143.0" y="259.5" />
+      <point x="-93.66666666666697" y="-61.5" />
+      <point x="1805.4970739700366" y="898.0" />
+      <point x="1237.4974250936334" y="898.0" />
+      <point x="1237.4974250936334" y="858.0" />
+      <point x="1713.2028323970035" y="858.0" />
+      <point x="-71.33333333333348" y="248.5" />
     </edge>
     <edge source="controller.ConnectCommand" target="controller.Command" relationship="REALIZATION">
-      <point x="0.0" y="-61.5" />
-      <point x="2616.34375" y="732.0" />
-      <point x="2483.7012648809514" y="732.0" />
-      <point x="2483.7012648809514" y="722.0" />
-      <point x="2637.84375" y="722.0" />
+      <point x="0.0" y="-50.5" />
+      <point x="2693.6637406367036" y="868.0" />
+      <point x="2668.3694990636704" y="868.0" />
+      <point x="2668.3694990636704" y="858.0" />
+      <point x="2831.0833333333335" y="858.0" />
       <point x="-52.0" y="27.0" />
     </edge>
     <edge source="controller.Controller" target="model.ChessPlayer" relationship="DEPENDENCY">
-      <point x="169.66666666666674" y="-116.0" />
-      <point x="1087.0345982142849" y="992.0" />
-      <point x="1713.75" y="992.0" />
-      <point x="1713.75" y="972.0" />
-      <point x="1149.0937500000002" y="972.0" />
-      <point x="1149.0937500000002" y="762.0" />
-      <point x="799.5000000000001" y="762.0" />
-      <point x="799.5000000000001" y="702.0" />
-      <point x="1434.4512648809516" y="702.0" />
-      <point x="-143.0" y="259.5" />
+      <point x="169.66666666666652" y="-116.5" />
+      <point x="1359.036165730337" y="1171.0" />
+      <point x="1816.1224250936334" y="1171.0" />
+      <point x="1816.1224250936334" y="1141.0" />
+      <point x="1502.1637406367036" y="1141.0" />
+      <point x="1502.1637406367036" y="898.0" />
+      <point x="1237.4974250936334" y="898.0" />
+      <point x="1237.4974250936334" y="858.0" />
+      <point x="1713.2028323970035" y="858.0" />
+      <point x="-71.33333333333348" y="248.5" />
     </edge>
     <edge source="controller.Controller" target="controller.ConnectCommand" relationship="DEPENDENCY">
-      <point x="169.66666666666674" y="-116.0" />
-      <point x="1087.0345982142849" y="992.0" />
-      <point x="1713.75" y="992.0" />
-      <point x="1713.75" y="972.0" />
-      <point x="2616.34375" y="972.0" />
-      <point x="0.0" y="61.5" />
+      <point x="169.66666666666652" y="-116.5" />
+      <point x="1359.036165730337" y="1171.0" />
+      <point x="1816.1224250936334" y="1171.0" />
+      <point x="1816.1224250936334" y="1141.0" />
+      <point x="2693.6637406367036" y="1141.0" />
+      <point x="0.0" y="50.5" />
     </edge>
     <edge source="view.DataPanel" target="model.ChessTitleEnum" relationship="DEPENDENCY">
-      <point x="23.375" y="-105.5" />
-      <point x="788.7187500000002" y="1288.0" />
-      <point x="0.0" y="1288.0" />
-      <point x="0.0" y="140.0" />
-      <point x="1264.4583333333335" y="140.0" />
-      <point x="1264.4583333333335" y="120.0" />
-      <point x="461.69642857142867" y="120.0" />
-      <point x="53.0" y="49.5" />
+      <point x="102.75" y="-248.5" />
+      <point x="1215.9137406367036" y="1498.0" />
+      <point x="1552.8694990636704" y="1498.0" />
+      <point x="1552.8694990636704" y="1458.0" />
+      <point x="2584.1637406367036" y="1458.0" />
+      <point x="2584.1637406367036" y="308.0" />
+      <point x="2010.6015917603" y="308.0" />
+      <point x="2010.6015917603" y="298.0" />
+      <point x="1904.4349250936334" y="298.0" />
+      <point x="52.99999999999977" y="138.5" />
     </edge>
     <edge source="view.MainFrame" target="view.PresentationPanel" relationship="TO_ONE">
-      <point x="19.25" y="49.5" />
-      <point x="1058.760416666667" y="1746.0" />
-      <point x="1087.510416666667" y="1746.0" />
-      <point x="1087.510416666667" y="1756.0" />
-      <point x="1131.010416666667" y="1756.0" />
-      <point x="1131.010416666667" y="1930.0" />
-      <point x="1065.885416666667" y="1930.0" />
-      <point x="1065.885416666667" y="1940.0" />
-      <point x="1101.6770833333335" y="1940.0" />
-      <point x="72.66666666666669" y="-71.5" />
+      <point x="30.375" y="-127.5" />
+      <point x="708.6220739700368" y="2088.0" />
+      <point x="1118.1637406367036" y="2088.0" />
+      <point x="1118.1637406367036" y="2058.0" />
+      <point x="153.36949906367045" y="2058.0" />
+      <point x="153.36949906367045" y="1171.0" />
+      <point x="205.75" y="1171.0" />
+      <point x="0.0" y="94.5" />
     </edge>
     <edge source="view.DataPanel" target="view.DataPanelListener" relationship="TO_ONE">
-      <point x="70.125" y="-105.5" />
-      <point x="835.4687500000002" y="1318.0" />
-      <point x="1259.8679315476184" y="1318.0" />
+      <point x="34.25" y="-248.5" />
+      <point x="1147.4137406367036" y="1508.0" />
+      <point x="1531.8694990636704" y="1508.0" />
       <point x="-68.0" y="27.0" />
     </edge>
     <edge source="view.PresentationPanel" target="view.MainFrame.MyMenuBar" relationship="DEPENDENCY">
-      <point x="0.0" y="-71.5" />
-      <point x="1029.010416666667" y="1920.0" />
-      <point x="990.760416666667" y="1920.0" />
-      <point x="-43.25" y="60.5" />
+      <point x="54.25" y="-94.5" />
+      <point x="260.0" y="908.0" />
+      <point x="232.66374063670355" y="908.0" />
+      <point x="232.66374063670355" y="868.0" />
+      <point x="297.5" y="868.0" />
+      <point x="127.5" y="171.5" />
     </edge>
     <edge source="view.MainFrame" target="controller.Controller" relationship="TO_ONE">
-      <point x="0.0" y="-49.5" />
-      <point x="1039.510416666667" y="1583.0" />
-      <point x="947.5345982142849" y="1583.0" />
-      <point x="947.5345982142849" y="1288.0" />
-      <point x="1087.0345982142849" y="1288.0" />
-      <point x="169.66666666666652" y="116.0" />
+      <point x="30.375" y="-127.5" />
+      <point x="708.6220739700368" y="2088.0" />
+      <point x="1118.1637406367036" y="2088.0" />
+      <point x="1118.1637406367036" y="2058.0" />
+      <point x="1260.6637406367036" y="2058.0" />
+      <point x="1260.6637406367036" y="1488.0" />
+      <point x="1265.9137406367036" y="1488.0" />
+      <point x="1265.9137406367036" y="1468.0" />
+      <point x="1189.3694990636704" y="1468.0" />
+      <point x="0.0" y="116.5" />
     </edge>
     <edge source="controller.Load4ServerCommand" target="model.ChessPlayer" relationship="CREATE">
-      <point x="-31.5" y="-50.0" />
-      <point x="2022.8437500000002" y="742.0" />
-      <point x="2189.09375" y="742.0" />
-      <point x="2189.09375" y="712.0" />
-      <point x="1720.4512648809516" y="712.0" />
-      <point x="143.0" y="259.5" />
-    </edge>
-    <edge source="view.MainFrame" target="view.DataPanelListener" relationship="TO_ONE">
-      <point x="0.0" y="-49.5" />
-      <point x="1039.510416666667" y="1583.0" />
-      <point x="1270.3679315476184" y="1583.0" />
-      <point x="1270.3679315476184" y="1288.0" />
-      <point x="1259.8679315476184" y="1288.0" />
-      <point x="-68.0" y="27.0" />
+      <point x="-35.125" y="-61.5" />
+      <point x="2398.0387406367036" y="878.0" />
+      <point x="2294.1429073033705" y="878.0" />
+      <point x="2294.1429073033705" y="858.0" />
+      <point x="1855.8694990636704" y="858.0" />
+      <point x="71.33333333333348" y="248.5" />
     </edge>
     <edge source="model.ChessPlayer" target="model.ChessTitleEnum" relationship="TO_ONE">
-      <point x="-107.25" y="-259.5" />
-      <point x="1470.2012648809516" y="130.0" />
-      <point x="355.69642857142867" y="130.0" />
-      <point x="-53.0" y="49.5" />
+      <point x="-53.5" y="-248.5" />
+      <point x="1731.036165730337" y="298.0" />
+      <point x="1798.4349250936334" y="298.0" />
+      <point x="-53.0" y="138.5" />
+    </edge>
+    <edge source="view.MainFrame" target="view.DataPanelListener" relationship="TO_ONE">
+      <point x="30.375" y="-127.5" />
+      <point x="708.6220739700368" y="2088.0" />
+      <point x="1118.1637406367036" y="2088.0" />
+      <point x="1118.1637406367036" y="2058.0" />
+      <point x="1542.3694990636704" y="2058.0" />
+      <point x="1542.3694990636704" y="1468.0" />
+      <point x="1531.8694990636704" y="1468.0" />
+      <point x="-68.0" y="27.0" />
     </edge>
     <edge source="view.DataPanel" target="view.DataPanel.MyComboBoxRenderer" relationship="CREATE">
-      <point x="-23.375" y="-105.5" />
-      <point x="741.9687500000002" y="1298.0" />
-      <point x="525.3679315476184" y="1298.0" />
-      <point x="117.5" y="38.5" />
+      <point x="-34.25" y="-248.5" />
+      <point x="1078.9137406367036" y="1488.0" />
+      <point x="797.3694990636703" y="1488.0" />
+      <point x="117.5" y="39.5" />
     </edge>
     <edge source="controller.DisconnectCommand" target="controller.Command" relationship="REALIZATION">
-      <point x="0.0" y="-38.5" />
-      <point x="2839.34375" y="732.0" />
-      <point x="2483.7012648809514" y="732.0" />
-      <point x="2483.7012648809514" y="722.0" />
-      <point x="2637.84375" y="722.0" />
+      <point x="0.0" y="-39.5" />
+      <point x="2903.1637406367036" y="868.0" />
+      <point x="2668.3694990636704" y="868.0" />
+      <point x="2668.3694990636704" y="858.0" />
+      <point x="2831.0833333333335" y="858.0" />
       <point x="-52.0" y="27.0" />
     </edge>
     <edge source="controller.Controller" target="controller.LoadData4FileCommand" relationship="DEPENDENCY">
-      <point x="169.66666666666674" y="-116.0" />
-      <point x="1087.0345982142849" y="992.0" />
-      <point x="1713.75" y="992.0" />
-      <point x="1713.75" y="972.0" />
-      <point x="1422.3437500000002" y="972.0" />
-      <point x="0.0" y="50.0" />
+      <point x="169.66666666666652" y="-116.5" />
+      <point x="1359.036165730337" y="1171.0" />
+      <point x="1816.1224250936334" y="1171.0" />
+      <point x="1816.1224250936334" y="1141.0" />
+      <point x="1899.1637406367036" y="1141.0" />
+      <point x="0.0" y="61.5" />
     </edge>
     <edge source="view.MainFrame" target="view.CalculatorPanel" relationship="TO_ONE">
-      <point x="0.0" y="-49.5" />
-      <point x="1039.510416666667" y="1583.0" />
-      <point x="1076.5345982142849" y="1583.0" />
-      <point x="39.5" y="71.5" />
+      <point x="30.375" y="-127.5" />
+      <point x="708.6220739700368" y="2088.0" />
+      <point x="1118.1637406367036" y="2088.0" />
+      <point x="1118.1637406367036" y="2058.0" />
+      <point x="358.86949906367045" y="2058.0" />
+      <point x="65.0" y="226.5" />
     </edge>
     <edge source="view.MainFrame" target="controller.Controller" relationship="CREATE">
-      <point x="-51.33333333333337" y="-49.5" />
-      <point x="988.1770833333335" y="1603.0" />
-      <point x="869.3437500000002" y="1603.0" />
-      <point x="869.3437500000002" y="1593.0" />
-      <point x="936.5345982142849" y="1593.0" />
-      <point x="936.5345982142849" y="1298.0" />
-      <point x="917.3679315476182" y="1298.0" />
-      <point x="0.0" y="116.0" />
+      <point x="-30.375" y="-127.5" />
+      <point x="647.8720739700368" y="2088.0" />
+      <point x="228.16374063670355" y="2088.0" />
+      <point x="228.16374063670355" y="2068.0" />
+      <point x="965.6637406367036" y="2068.0" />
+      <point x="965.6637406367036" y="1508.0" />
+      <point x="1019.7028323970038" y="1508.0" />
+      <point x="-169.66666666666652" y="116.5" />
     </edge>
     <edge source="view.MainFrame" target="controller.Command" relationship="DEPENDENCY">
-      <point x="51.33333333333337" y="-49.5" />
-      <point x="1090.8437500000002" y="1603.0" />
-      <point x="1796.9880952380952" y="1603.0" />
-      <point x="1796.9880952380952" y="1573.0" />
-      <point x="2977.84375" y="1573.0" />
-      <point x="2977.84375" y="712.0" />
-      <point x="2741.84375" y="712.0" />
+      <point x="91.125" y="-127.5" />
+      <point x="769.3720739700368" y="2078.0" />
+      <point x="1554.9137406367036" y="2078.0" />
+      <point x="1554.9137406367036" y="2048.0" />
+      <point x="3015.1637406367036" y="2048.0" />
+      <point x="3015.1637406367036" y="848.0" />
+      <point x="2935.0833333333335" y="848.0" />
       <point x="52.0" y="27.0" />
     </edge>
-    <edge source="controller.Controller" target="model.DataBase" relationship="CREATE">
-      <point x="0.0" y="-116.0" />
-      <point x="917.3679315476182" y="992.0" />
-      <point x="842.3437500000002" y="992.0" />
-      <point x="76.0" y="83.0" />
-    </edge>
     <edge source="view.PresentationPanel" target="model.ChessPlayer" relationship="DEPENDENCY">
-      <point x="0.0" y="-71.5" />
-      <point x="1029.010416666667" y="1920.0" />
-      <point x="11.0" y="1920.0" />
-      <point x="11.0" y="762.0" />
-      <point x="799.5000000000001" y="762.0" />
-      <point x="799.5000000000001" y="702.0" />
-      <point x="1434.4512648809516" y="702.0" />
-      <point x="-143.0" y="259.5" />
+      <point x="54.25" y="-94.5" />
+      <point x="260.0" y="908.0" />
+      <point x="232.66374063670355" y="908.0" />
+      <point x="232.66374063670355" y="878.0" />
+      <point x="1237.4974250936334" y="878.0" />
+      <point x="1237.4974250936334" y="858.0" />
+      <point x="1713.2028323970035" y="858.0" />
+      <point x="-71.33333333333348" y="248.5" />
+    </edge>
+    <edge source="controller.Controller" target="model.DataBase" relationship="CREATE">
+      <point x="0.0" y="-116.5" />
+      <point x="1189.3694990636704" y="1171.0" />
+      <point x="1209.6666666666665" y="1171.0" />
+      <point x="76.25" y="83.5" />
     </edge>
     <edge source="view.MainFrame" target="view.DataPanel" relationship="TO_ONE">
-      <point x="0.0" y="-49.5" />
-      <point x="1039.510416666667" y="1583.0" />
-      <point x="812.0937500000002" y="1583.0" />
-      <point x="46.75" y="105.5" />
+      <point x="30.375" y="-127.5" />
+      <point x="708.6220739700368" y="2088.0" />
+      <point x="1118.1637406367036" y="2088.0" />
+      <point x="1118.1637406367036" y="2058.0" />
+      <point x="1181.6637406367036" y="2058.0" />
+      <point x="68.5" y="248.5" />
     </edge>
     <edge source="view.DataPanel" target="controller.Controller" relationship="DEPENDENCY">
-      <point x="23.375" y="-105.5" />
-      <point x="788.7187500000002" y="1278.0" />
-      <point x="725.0312500000002" y="1278.0" />
-      <point x="725.0312500000002" y="1268.0" />
-      <point x="747.7012648809516" y="1268.0" />
-      <point x="-169.66666666666663" y="116.0" />
+      <point x="102.75" y="-248.5" />
+      <point x="1215.9137406367036" y="1498.0" />
+      <point x="1552.8694990636704" y="1498.0" />
+      <point x="1552.8694990636704" y="1458.0" />
+      <point x="1359.036165730337" y="1458.0" />
+      <point x="169.66666666666652" y="116.5" />
     </edge>
     <edge source="controller.Save2ServerCommand" target="controller.Command" relationship="REALIZATION">
-      <point x="113.33333333333326" y="-38.5" />
-      <point x="1851.6770833333335" y="732.0" />
-      <point x="2483.7012648809514" y="732.0" />
-      <point x="2483.7012648809514" y="722.0" />
-      <point x="2637.84375" y="722.0" />
+      <point x="71.0" y="-50.5" />
+      <point x="1703.1637406367036" y="868.0" />
+      <point x="2668.3694990636704" y="868.0" />
+      <point x="2668.3694990636704" y="858.0" />
+      <point x="2831.0833333333335" y="858.0" />
       <point x="-52.0" y="27.0" />
     </edge>
     <edge source="controller.Controller" target="controller.Load4ServerCommand" relationship="DEPENDENCY">
-      <point x="169.66666666666674" y="-116.0" />
-      <point x="1087.0345982142849" y="992.0" />
-      <point x="1713.75" y="992.0" />
-      <point x="1713.75" y="972.0" />
-      <point x="2054.34375" y="972.0" />
-      <point x="0.0" y="50.0" />
+      <point x="169.66666666666652" y="-116.5" />
+      <point x="1359.036165730337" y="1171.0" />
+      <point x="1816.1224250936334" y="1171.0" />
+      <point x="1816.1224250936334" y="1141.0" />
+      <point x="2433.1637406367036" y="1141.0" />
+      <point x="0.0" y="61.5" />
     </edge>
     <edge source="controller.Controller" target="model.DataBase" relationship="TO_ONE">
-      <point x="-169.66666666666663" y="-116.0" />
-      <point x="747.7012648809516" y="992.0" />
-      <point x="690.3437500000002" y="992.0" />
-      <point x="-76.0" y="83.0" />
+      <point x="-169.66666666666652" y="-116.5" />
+      <point x="1019.7028323970038" y="1171.0" />
+      <point x="1057.1666666666665" y="1171.0" />
+      <point x="-76.25" y="83.5" />
     </edge>
     <edge source="view.PresentationPanel" target="view.MainFrame.MyMenuBar" relationship="TO_ONE">
-      <point x="72.66666666666669" y="-71.5" />
-      <point x="1101.6770833333335" y="1940.0" />
-      <point x="1065.885416666667" y="1940.0" />
-      <point x="1065.885416666667" y="1930.0" />
-      <point x="1077.260416666667" y="1930.0" />
-      <point x="43.25" y="60.5" />
-    </edge>
-    <edge source="controller.Save2ServerCommand" target="model.ChessTitleEnum" relationship="DEPENDENCY">
-      <point x="-113.33333333333326" y="-38.5" />
-      <point x="1625.010416666667" y="762.0" />
-      <point x="1580.3437500000005" y="762.0" />
-      <point x="1580.3437500000005" y="712.0" />
-      <point x="1008.7258184523821" y="712.0" />
-      <point x="1008.7258184523821" y="140.0" />
-      <point x="1264.4583333333335" y="140.0" />
-      <point x="1264.4583333333335" y="120.0" />
-      <point x="461.69642857142867" y="120.0" />
-      <point x="53.0" y="49.5" />
+      <point x="-54.25" y="-94.5" />
+      <point x="151.5" y="908.0" />
+      <point x="190.28874063670355" y="908.0" />
+      <point x="190.28874063670355" y="898.0" />
+      <point x="212.5" y="898.0" />
+      <point x="42.5" y="171.5" />
     </edge>
     <edge source="view.PresentationPanel" target="view.MainFrame" relationship="DEPENDENCY">
-      <point x="0.0" y="-71.5" />
-      <point x="1029.010416666667" y="1920.0" />
-      <point x="1142.010416666667" y="1920.0" />
-      <point x="1142.010416666667" y="1746.0" />
-      <point x="1097.260416666667" y="1746.0" />
-      <point x="57.75" y="49.5" />
+      <point x="72.33333333333326" y="94.5" />
+      <point x="278.08333333333326" y="1141.0" />
+      <point x="434.36949906367033" y="1141.0" />
+      <point x="434.36949906367045" y="2048.0" />
+      <point x="1554.9137406367036" y="2048.0" />
+      <point x="1554.9137406367036" y="2078.0" />
+      <point x="769.3720739700368" y="2078.0" />
+      <point x="91.125" y="-127.5" />
+    </edge>
+    <edge source="controller.Save2ServerCommand" target="model.ChessTitleEnum" relationship="DEPENDENCY">
+      <point x="-71.0" y="-50.5" />
+      <point x="1561.1637406367036" y="908.0" />
+      <point x="1563.4137406367036" y="908.0" />
+      <point x="1563.4137406367036" y="878.0" />
+      <point x="1598.6194990636704" y="878.0" />
+      <point x="1598.6194990636704" y="308.0" />
+      <point x="2010.6015917603" y="308.0" />
+      <point x="2010.6015917603" y="298.0" />
+      <point x="1904.4349250936334" y="298.0" />
+      <point x="52.99999999999977" y="138.5" />
     </edge>
     <edge source="controller.Load4ServerCommand" target="model.ChessPlayer" relationship="TO_MANY">
-      <point x="-94.5" y="-50.0" />
-      <point x="1959.8437500000002" y="752.0" />
-      <point x="1517.5937500000002" y="752.0" />
-      <point x="1517.5937500000002" y="702.0" />
-      <point x="1577.4512648809516" y="702.0" />
-      <point x="0.0" y="259.5" />
+      <point x="-105.375" y="-61.5" />
+      <point x="2327.7887406367036" y="888.0" />
+      <point x="1784.536165730337" y="888.0" />
+      <point x="0.0" y="248.5" />
     </edge>
     <edge source="controller.Load4ServerCommand" target="model.ChessTitleEnum" relationship="DEPENDENCY">
-      <point x="31.5" y="-50.0" />
-      <point x="2085.84375" y="722.0" />
-      <point x="2460.2012648809514" y="722.0" />
-      <point x="2460.2012648809514" y="140.0" />
-      <point x="1264.4583333333335" y="140.0" />
-      <point x="1264.4583333333335" y="120.0" />
-      <point x="461.69642857142867" y="120.0" />
-      <point x="53.0" y="49.5" />
+      <point x="35.125" y="-61.5" />
+      <point x="2468.2887406367036" y="858.0" />
+      <point x="2438.1637406367036" y="858.0" />
+      <point x="2438.1637406367036" y="308.0" />
+      <point x="2010.6015917603" y="308.0" />
+      <point x="2010.6015917603" y="298.0" />
+      <point x="1904.4349250936334" y="298.0" />
+      <point x="52.99999999999977" y="138.5" />
     </edge>
     <edge source="controller.Load4ServerCommand" target="controller.Command" relationship="REALIZATION">
-      <point x="94.5" y="-50.0" />
-      <point x="2148.84375" y="732.0" />
-      <point x="2483.7012648809514" y="732.0" />
-      <point x="2483.7012648809514" y="722.0" />
-      <point x="2637.84375" y="722.0" />
+      <point x="105.375" y="-61.5" />
+      <point x="2538.5387406367036" y="868.0" />
+      <point x="2668.3694990636704" y="868.0" />
+      <point x="2668.3694990636704" y="858.0" />
+      <point x="2831.0833333333335" y="858.0" />
       <point x="-52.0" y="27.0" />
     </edge>
-    <edge source="view.MainFrame" target="view.MainFrame.MyMenuBar" relationship="CREATE">
-      <point x="-57.75" y="49.5" />
-      <point x="981.760416666667" y="1746.0" />
-      <point x="980.510416666667" y="1746.0" />
-      <point x="980.510416666667" y="1756.0" />
-      <point x="976.3437500000002" y="1756.0" />
-      <point x="-57.666666666666686" y="-60.5" />
-    </edge>
     <edge source="view.MainFrame" target="view.CalculatorPanel" relationship="CREATE">
-      <point x="-51.33333333333337" y="-49.5" />
-      <point x="988.1770833333335" y="1603.0" />
-      <point x="869.3437500000002" y="1603.0" />
-      <point x="869.3437500000002" y="1593.0" />
-      <point x="997.5345982142849" y="1593.0" />
-      <point x="-39.5" y="71.5" />
+      <point x="-30.375" y="-127.5" />
+      <point x="647.8720739700368" y="2088.0" />
+      <point x="228.16374063670355" y="2088.0" />
+      <point x="-65.0" y="226.5" />
+    </edge>
+    <edge source="view.MainFrame" target="view.MainFrame.MyMenuBar" relationship="CREATE">
+      <point x="-30.375" y="-127.5" />
+      <point x="647.8720739700368" y="2088.0" />
+      <point x="228.16374063670355" y="2088.0" />
+      <point x="228.16374063670355" y="2068.0" />
+      <point x="32.12242509363341" y="2068.0" />
+      <point x="32.12242509363341" y="898.0" />
+      <point x="127.5" y="898.0" />
+      <point x="-42.5" y="171.5" />
     </edge>
     <edge source="view.MainFrame" target="view.MainFrame.MyMenuBar" relationship="TO_ONE">
-      <point x="19.25" y="49.5" />
-      <point x="1058.760416666667" y="1746.0" />
-      <point x="1087.510416666667" y="1746.0" />
-      <point x="1087.510416666667" y="1756.0" />
-      <point x="1091.6770833333335" y="1756.0" />
-      <point x="57.66666666666666" y="-60.5" />
+      <point x="30.375" y="-127.5" />
+      <point x="708.6220739700368" y="2088.0" />
+      <point x="1118.1637406367036" y="2088.0" />
+      <point x="1118.1637406367036" y="2058.0" />
+      <point x="43.12242509363341" y="2058.0" />
+      <point x="43.12242509363341" y="908.0" />
+      <point x="190.28874063670355" y="908.0" />
+      <point x="190.28874063670355" y="898.0" />
+      <point x="212.5" y="898.0" />
+      <point x="42.5" y="171.5" />
     </edge>
     <edge source="model.ChessPlayer" target="model.ChessTitleEnum" relationship="DEPENDENCY">
-      <point x="107.25" y="-259.5" />
-      <point x="1684.7012648809516" y="140.0" />
-      <point x="1264.4583333333335" y="140.0" />
-      <point x="1264.4583333333335" y="120.0" />
-      <point x="461.69642857142867" y="120.0" />
-      <point x="53.0" y="49.5" />
+      <point x="53.5" y="-248.5" />
+      <point x="1838.036165730337" y="308.0" />
+      <point x="2010.6015917603" y="308.0" />
+      <point x="2010.6015917603" y="298.0" />
+      <point x="1904.4349250936334" y="298.0" />
+      <point x="52.99999999999977" y="138.5" />
     </edge>
     <edge source="controller.Controller" target="view.PresentationPanel" relationship="DEPENDENCY">
-      <point x="-169.66666666666663" y="116.0" />
-      <point x="747.7012648809516" y="1268.0" />
-      <point x="725.0312500000002" y="1268.0" />
-      <point x="725.0312500000002" y="1318.0" />
-      <point x="661.3437500000002" y="1318.0" />
-      <point x="661.3437500000002" y="1920.0" />
-      <point x="1029.010416666667" y="1920.0" />
-      <point x="0.0" y="-71.5" />
+      <point x="169.66666666666652" y="-116.5" />
+      <point x="1359.036165730337" y="1171.0" />
+      <point x="1816.1224250936334" y="1171.0" />
+      <point x="1816.1224250936334" y="1151.0" />
+      <point x="434.36949906367033" y="1151.0" />
+      <point x="434.36949906367033" y="1141.0" />
+      <point x="278.08333333333326" y="1141.0" />
+      <point x="72.33333333333326" y="94.5" />
     </edge>
     <edge source="view.MainFrame" target="view.DataPanel" relationship="CREATE">
-      <point x="-51.33333333333337" y="-49.5" />
-      <point x="988.1770833333335" y="1603.0" />
-      <point x="869.3437500000002" y="1603.0" />
-      <point x="869.3437500000002" y="1593.0" />
-      <point x="718.5937500000002" y="1593.0" />
-      <point x="-46.75" y="105.5" />
+      <point x="-30.375" y="-127.5" />
+      <point x="647.8720739700368" y="2088.0" />
+      <point x="228.16374063670355" y="2088.0" />
+      <point x="228.16374063670355" y="2068.0" />
+      <point x="1044.6637406367036" y="2068.0" />
+      <point x="-68.5" y="248.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic" zoom="0.5499999999999999" showDependencies="true" x="1078.3181818181818" y="1056.272727272727" />
+  <settings layout="Hierarchic" zoom="0.225130890052356" showDependencies="true" x="1508.0" y="1231.5" />
   <SelectedNodes>
-    <node>view.App</node>
+    <node>model.ChessTitleEnum</node>
   </SelectedNodes>
   <Categories>
-    <Category>Constructors</Category>
     <Category>Fields</Category>
     <Category>Inner Classes</Category>
     <Category>Methods</Category>
-    <Category>Properties</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

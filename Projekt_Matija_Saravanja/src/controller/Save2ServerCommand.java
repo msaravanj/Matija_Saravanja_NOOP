@@ -2,7 +2,9 @@ package controller;
 
 import model.ChessPlayer;
 import model.ChessTitleEnum;
+import view.MainFrame;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -100,8 +102,10 @@ public class Save2ServerCommand implements Command {
                 countStm.close();
                 insertStm.close();
                 updateStm.close();
+                JOptionPane.showMessageDialog(null,"Data successfully saved to server!", "Saving to server info", JOptionPane.INFORMATION_MESSAGE);
 
             } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,"Saving failed!", "ERROR", JOptionPane.ERROR_MESSAGE);
                 e.printStackTrace();
             }
 

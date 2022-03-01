@@ -2,7 +2,9 @@ package controller;
 
 import model.ChessPlayer;
 import model.ChessTitleEnum;
+import view.CalculatorPanel;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,7 +38,7 @@ public class Load4ServerCommand implements Command {
 
         if (connection != null){
             System.out.println("Loading data from DB server");
-            String selectsSQL = "select * from ChessPlayerTbl order by elo_rating desc";
+            String selectsSQL = "select * from ChessPlayerTbl order by surname";
 
             try {
                 selectStm = connection.prepareStatement(selectsSQL);
@@ -62,6 +64,8 @@ public class Load4ServerCommand implements Command {
                 System.out.println("Data loaded from server!");
                 System.out.println("List: " + chessPlayers);
             } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Loading failed!",
+                        "ERROR", JOptionPane.ERROR_MESSAGE);
                 e.printStackTrace();
             }
         }

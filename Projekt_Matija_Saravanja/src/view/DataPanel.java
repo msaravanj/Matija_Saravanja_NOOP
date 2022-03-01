@@ -61,41 +61,6 @@ public class DataPanel extends JPanel {
      */
     private void activateComp() {
 
-        eloRatingField.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                    e.consume();
-                    JOptionPane.showMessageDialog(DataPanel.this, "Rating must be a number!",
-                            "WARNING", JOptionPane.WARNING_MESSAGE);
-                }
-            }
-        });
-
-        fideIdField.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                    e.consume();
-                    JOptionPane.showMessageDialog(DataPanel.this, "ID must be a number!",
-                            "WARNING", JOptionPane.WARNING_MESSAGE);
-                }
-            }
-        });
-
-
-        birthYearField.addKeyListener(new KeyAdapter() {
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                    e.consume();
-                    JOptionPane.showMessageDialog(DataPanel.this, "Birth year must be a number!",
-                            "WARNING", JOptionPane.WARNING_MESSAGE);
-                }
-            }
-        });
-
-
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -137,14 +102,13 @@ public class DataPanel extends JPanel {
     private void resetDataPanel() {
         nameField.setText("");
         surnameField.setText("");
-        eloRatingField.setText("");
+        eloRatingField.setValue(null);
         bg.setSelected(maleButton.getModel(), true);
-        birthYearField.setText("");
+        birthYearField.setValue(null);
         fideIdField.setText("");
         countryCombo.setSelectedIndex(-1);
         titleCombo.setSelectedIndex(0);
         nameField.requestFocus();
-
     }
 
     /**
@@ -153,7 +117,6 @@ public class DataPanel extends JPanel {
     private void setBorders() {
         Border inner = BorderFactory.createTitledBorder("Player Data");
         Border outer = BorderFactory.createEmptyBorder(5, 5, 5, 2);
-
         setBorder(BorderFactory.createCompoundBorder(outer, inner));
     }
 
@@ -196,7 +159,6 @@ public class DataPanel extends JPanel {
         gbc.anchor = GridBagConstraints.FIRST_LINE_END;
 
         add(femaleButton, gbc);
-
 
         gbc.gridx--;
         gbc.gridy++;
@@ -272,7 +234,7 @@ public class DataPanel extends JPanel {
 
         try {
             eloMask = new MaskFormatter("####");
-            eloMask.setPlaceholderCharacter('#');
+            eloMask.setPlaceholderCharacter('_');
         } catch (ParseException e) {
             e.printStackTrace();
         }

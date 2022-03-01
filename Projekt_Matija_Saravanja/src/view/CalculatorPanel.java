@@ -55,11 +55,13 @@ public class CalculatorPanel extends JPanel {
 
     /**
      * GET metoda koja dohvaca rejting igraca iz API-ja s interneta po igracevom FIDE rejtingu koji je potrebno upisati u skocni prozor
+     *
+     * @param fideId
+     *      sluzbeni ID od organizacije FIDE
      * @return
-     *         vraca rejting tipa String
+     *      vraca JSON object s podacima o rejtingu
      */
-    private String getRating4APIByFideId(){
-        int fideId = Integer.parseInt(JOptionPane.showInputDialog("Enter FIDE id of player: ", 1503014));
+    private JSONObject getRating4APIByFideId(int fideId){
         JSONObject myResponse = null;
         try {
             URL url = new URL("https://fide-ratings-scraper.herokuapp.com/player/"+fideId+"/elo");
@@ -69,10 +71,7 @@ public class CalculatorPanel extends JPanel {
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
 
-            int status = connection.getResponseCode();
-
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String inputLine;
             StringBuffer response = new StringBuffer();
             while ((inputLine = in.readLine()) != null) {
@@ -90,7 +89,18 @@ public class CalculatorPanel extends JPanel {
             connection.disconnect();
         }
 
-        return myResponse.getString("standard_elo");
+        return myResponse;
+    }
+
+    /**
+     * Metoda koja vraca komponente u pocetno stanje
+     */
+    private void resetPanel(){
+        oppRatingField.setValue(null);
+        yourRatingField.setValue(null);
+        koefCombo.setSelectedIndex(0);
+        bg2.setSelected(drawRadio.getModel(), true);
+        yourRatingField.requestFocus();
     }
 
     /**
@@ -102,16 +112,29 @@ public class CalculatorPanel extends JPanel {
         loadYrsRtgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String fideId = JOptionPane.showInputDialog("Enter FIDE id of player: ", 1503014);
 
-                yourRatingField.setText(getRating4APIByFideId());
+                if (fideId != null){
+                    try{
+                        yourRatingField.setText(getRating4APIByFideId(Integer.parseInt(fideId)).getString("standard_elo"));
+                    } catch (NumberFormatException nfe){
+                        nfe.printStackTrace();
+                        JOptionPane.showMessageDialog(CalculatorPanel.this, "Invalid input!",
+                                "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
+                      }
+
             }
         });
 
         loadOppRtgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String fideId = JOptionPane.showInputDialog("Enter FIDE id of player: ", 1503014);
 
-                oppRatingField.setText(getRating4APIByFideId());
+                if (fideId != null){
+                    oppRatingField.setText(getRating4APIByFideId(Integer.parseInt(fideId)).getString("standard_elo"));
+                }
             }
         });
 
@@ -145,6 +168,7 @@ public class CalculatorPanel extends JPanel {
                         resultField.setText(df.format(result));
                     }
 
+                    resetPanel();
 
                 }
             }
@@ -210,7 +234,6 @@ public class CalculatorPanel extends JPanel {
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(wonRadio, gbc);
         gbc.anchor = GridBagConstraints.FIRST_LINE_END;
-        //gbc.gridx++;
         add(drawRadio, gbc);
         gbc.gridx++;
         add(lostRadio, gbc);
@@ -229,7 +252,6 @@ public class CalculatorPanel extends JPanel {
         gbc.gridx++;
         gbc.anchor = GridBagConstraints.FIRST_LINE_END;
         add(resultField, gbc);
-
 
     }
 
@@ -253,7 +275,7 @@ public class CalculatorPanel extends JPanel {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        rtgMask.setPlaceholderCharacter('#');
+        rtgMask.setPlaceholderCharacter('_');
 
         yourRatingField = new JFormattedTextField(rtgMask);
         oppRatingField = new JFormattedTextField(rtgMask);
@@ -278,7 +300,5 @@ public class CalculatorPanel extends JPanel {
 
         resultField.setEnabled(false);
     }
-
-
 
 }

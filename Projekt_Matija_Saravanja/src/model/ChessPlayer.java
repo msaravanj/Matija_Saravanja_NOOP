@@ -1,9 +1,8 @@
 package model;
 
 import java.io.Serializable;
-
 /**
- * Klasa koja predstavlja sahista i njegove informacije
+ * Klasa koja predstavlja sahista i njegove podatke
  *
  * @author Matija Saravanja
  *
@@ -85,17 +84,15 @@ public class ChessPlayer implements Serializable {
 
     @java.lang.Override
     public java.lang.String toString() {
-        return "ChessPlayer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", gender='" + gender + '\'' +
-                ", birthYear=" + birthYear +
-                ", country='" + country + '\'' +
-                ", eloRating=" + eloRating +
-                ", fideId=" + fideId +
-                ", chessTitle=" + chessTitle +
-                '}';
+        return "id: " + id +
+                ", surname: '" + surname + '\'' +
+                ", name: '" + name + '\'' +
+                ", elo rating: " + eloRating +
+                ", gender: '" + gender + '\'' +
+                ", birth year: " + birthYear +
+                ", country: '" + country + '\'' +
+                ", fide id: " + fideId +
+                ", chess title: " + chessTitle;
     }
 
     public void chessPlayerInfo(){

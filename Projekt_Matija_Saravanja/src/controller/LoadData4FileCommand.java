@@ -2,6 +2,7 @@ package controller;
 
 import model.ChessPlayer;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
@@ -35,10 +36,16 @@ public class LoadData4FileCommand implements Command {
             ois.close();
 
         } catch (FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Loading failed!",
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Loading failed!",
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Loading failed!",
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
 

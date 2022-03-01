@@ -47,6 +47,7 @@ public class PresentationPanel extends JPanel {
         textArea.setBackground(Color.DARK_GRAY);
         textArea.setForeground(Color.WHITE);
         textArea.setFont(new Font("Arial", Font.BOLD, 12));
+        textArea.setEnabled(false);
         scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     }
 
@@ -63,7 +64,8 @@ public class PresentationPanel extends JPanel {
      * Metoda koja brise sve sa text area
      */
     public void clearAll4TxtArea(){
-        this.textArea.selectAll();
-        this.textArea.replaceSelection("");
+//        this.textArea.selectAll();
+//        this.textArea.replaceSelection("");
+        this.textArea.setText(null);
     }
 }

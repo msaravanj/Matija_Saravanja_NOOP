@@ -1,6 +1,7 @@
 package controller;
 
 import model.ChessPlayer;
+import view.MainFrame;
 
 import javax.swing.*;
 import java.io.*;
@@ -39,8 +40,10 @@ public class SaveData2FileCommand implements Command {
 
             JOptionPane.showMessageDialog(null, "Data saved to file: "+file.getName(), "Saving info", JOptionPane.INFORMATION_MESSAGE);
         } catch (FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null,"Saving failed!", "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         } catch (IOException e) {
+            JOptionPane.showMessageDialog(null,"Saving failed!", "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
 

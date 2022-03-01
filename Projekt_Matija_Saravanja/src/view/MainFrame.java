@@ -162,7 +162,6 @@ public class MainFrame extends JFrame {
                 public void actionPerformed(ActionEvent e) {
                     command = new ConnectCommand();
                     command.runCommand();
-                    JOptionPane.showMessageDialog(MainFrame.this,"Connection to server has been established!","Server status", JOptionPane.INFORMATION_MESSAGE);
                     connection = controller.getConnection((ConnectCommand) command);
                 }
             });
@@ -173,7 +172,6 @@ public class MainFrame extends JFrame {
                     if (connection != null){
                         command = new DisconnectCommand(connection);
                         command.runCommand();
-                        JOptionPane.showMessageDialog(MainFrame.this,"Disconnected from a server!", "Server status", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(MainFrame.this, "There is no active connection!", "Server status", JOptionPane.INFORMATION_MESSAGE);
 
@@ -192,8 +190,6 @@ public class MainFrame extends JFrame {
                             System.out.println("Saving data to server...");
                             command = new Save2ServerCommand(connection, controller.getAllChessPlayers4DB());
                             command.runCommand();
-                            JOptionPane.showMessageDialog(MainFrame.this,"Data successfully saved to server!", "Saving to server info", JOptionPane.INFORMATION_MESSAGE);
-
                         } else if (res == JOptionPane.NO_OPTION) {
                             System.out.println("User refused to save data...");
                         } else if (res == JOptionPane.CLOSED_OPTION) {

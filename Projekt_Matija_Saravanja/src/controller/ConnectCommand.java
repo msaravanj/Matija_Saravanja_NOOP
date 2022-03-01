@@ -1,5 +1,10 @@
 package controller;
 
+import view.CalculatorPanel;
+import view.MainFrame;
+import view.PresentationPanel;
+
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -31,9 +36,16 @@ public class ConnectCommand implements Command {
             connection = DriverManager.getConnection(url, user, pswd);
             System.out.println("Connected to: " + connection.toString());
 
+            JOptionPane.showMessageDialog(null,"Connection to server has been established!","Server status", JOptionPane.INFORMATION_MESSAGE);
+
         } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Connecting failed!",
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
+
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Connecting failed!",
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
     }
